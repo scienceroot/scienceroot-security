@@ -1,0 +1,69 @@
+{
+  "name": "@scienceroot/security",
+  "version": "1.0.0-beta.0",
+  "description": "",
+  "main": "./security.umd.js",
+  "module": "./security.es5.js",
+  "es2015": "./security.js",
+  "typings": "./security.d.ts",
+  "author": "Sven Seemann",
+  "bugs": {
+    "url": "",
+    "email": "sven.seemann@scienceroot.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": ">= 6.9.0",
+    "npm": ">= 3.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf out-tsc dist",
+    "prebuild": "npm run clean",
+    "build": "node build.js",
+    "build-demo": "tsc -p src/demo/",
+    "build-demo:watch": "tsc -p src/demo/ -w",
+    "serve": "lite-server -c=bs-config.json",
+    "prestart": "npm run build-demo",
+    "start": "concurrently \"npm run build-demo:watch\" \"npm run serve\""
+  },
+  "peerDependencies": {
+    "@angular/core": "5.1.x",
+    "@angular/animations": "5.1.x",
+    "@angular/forms": "5.1.x",
+    "@angular/http": "5.1.x",
+    "@angular/flex-layout": "2.0.0-beta.12"
+  },
+  "devDependencies": {
+    "@angular/animations": "5.1.x",
+    "@angular/common": "5.1.x",
+    "@angular/compiler": "5.1.x",
+    "@angular/compiler-cli": "5.1.x",
+    "@angular/core": "5.1.x",
+    "@angular/flex-layout": "2.0.0-beta.12",
+    "@angular/forms": "5.1.x",
+    "@angular/http": "5.1.x",
+    "@angular/platform-browser": "5.1.x",
+    "@angular/platform-browser-dynamic": "5.1.x",
+    "@angular/router": "5.1.x",
+    "camelcase": "4.1.x",
+    "concurrently": "3.5.x",
+    "core-js": "2.5.x",
+    "glob": "7.1.x",
+    "lite-server": "2.3.x",
+    "replace": "0.3.x",
+    "rimraf": "2.6.x",
+    "rollup": "0.53.x",
+    "rollup-plugin-sourcemaps": "0.4.x",
+    "rollup-plugin-uglify": "2.0.x",
+    "rxjs": "5.5.x",
+    "systemjs": "0.20.x",
+    "typescript": "2.5.x",
+    "zone.js": "0.8.x"
+  },
+  "dependencies": {
+
+  }
+}
