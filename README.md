@@ -28,6 +28,23 @@ export class AppModule {
 }
 ```
 
+### Get login state
+
+```typescript
+@Component({ })
+export class SomeComponent {
+  
+  constructor(private loginService: ScrAuthenticationLoginService) {
+    let login = this.loginService.authenticated();
+    if(login) {
+      // user is logged in
+    } else {
+      // unauthenticated user 
+    }
+  }
+}
+```
+
 ### Subscribe to login state
 
 ```typescript
@@ -43,5 +60,22 @@ export class SomeComponent {
       }
     })
   }
+}
+```
+
+### Restrict routes to authenticated users
+
+```typescript
+@NgModule({
+  imports: [
+    RouterModule.forChild([
+      { path: 'restricted', component: RestrictedComponent, canActivate: [ScrAuthenticationGuard] }
+    ])
+  ],
+  declarations: [RestrictedComponent],
+  exports: [RouterModule]
+})
+export class RestrictedDemoModule {
+
 }
 ```
