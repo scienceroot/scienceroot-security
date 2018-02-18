@@ -17,12 +17,10 @@ npm version ${NEXT_VERSION}
 # STEP BUILD
 set -e  # terminates on error
 npm run build
-node publish_index_remove.js  # replace all occurrences of [/index] in 'dist/'
 set +e
 
 # STEP PUBLISH
 echo "Publish version:                  $NEXT_VERSION"
 git push --follow-tags
 
-cd dist/
-npm publish
+npm publish dist

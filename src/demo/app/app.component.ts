@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       <h1>@scienceroot/security</h1>
       <ul>
         <li>
-          <a [routerLink]="['']">Home</a>
+          <a [routerLink]="['restricted']">Restricted Area</a>
         </li>
       </ul>
 

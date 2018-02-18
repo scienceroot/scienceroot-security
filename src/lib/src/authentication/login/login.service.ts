@@ -1,20 +1,50 @@
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
+import {HttpClient} from "@angular/common/http";
+import "rxjs/add/operator/map";
+
+const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
+const SCR_LOGIN_PATH: string = SCR_USER_BASE_PATH + '/login';
 
 @Injectable()
 export class ScrAuthenticationLoginService {
 
   /**
-   * Subject triggers everytime the login state is changing.
+   * Subject triggers every time the login state is changing.
    *
    * @type {Subject<any>} emits either true or false for login.
    */
   public loginStateChanged: Subject<boolean> = new Subject();
 
-  constructor() {
+  private isAuthenticated: boolean = false;
+
+  constructor(private httpClient: HttpClient) {
   }
 
-  public login() {
-    this.loginStateChanged.next(true);
+  public login(username: string, password: string): Promise<any> {
+    return this.httpClient.post(SCR_LOGIN_PATH, {username: username, password: password})
+      .toPromise()
+      .then(res => {
+        this.setLoginStatus(true);
+        return res;
+      }).catch((error: any) => {
+        this.setLoginStatus(false);
+        console.error(error);
+
+        throw error;
+      });
+  }
+
+  public authenticated(): boolean {
+    return this.isAuthenticated;
+  }
+
+  private setLoginStatus(status: boolean) {
+    // just propagate if status changes
+    if(status !== this.isAuthenticated) {
+      this.loginStateChanged.next(status);
+    }
+
+    this.isAuthenticated = status;
   }
 }

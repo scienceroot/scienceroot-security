@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
-import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { authOptionsFactory } from './auth-http.factory';
+
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
-import {BdAuthenticationErrorInterceptor} from "./authentifictation-error.interceptor";
+import {ScrAuthenticationErrorInterceptor} from "./authentifictation-error.interceptor";
+import {ScrAuthenticationInterceptor} from "./authentication.interceptor";
 
 export * from './authentifictation-error.interceptor';
 
 @NgModule({
   imports: [
-    HttpClientModule,
-    JwtModule.forRoot({
-      jwtOptionsProvider: {
-        provide: JWT_OPTIONS,
-        useFactory: authOptionsFactory,
-        deps: [AuthStore]
-      }
-    }),
+    HttpClientModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: BdAuthenticationErrorInterceptor,
-    multi: true,
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ScrAuthenticationErrorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ScrAuthenticationInterceptor,
+      multi: true,
+    }
+  ],
   exports: [ HttpClientModule ]
 })
 export class ScrSecureHttpClientModule {
