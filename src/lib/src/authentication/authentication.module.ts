@@ -4,8 +4,10 @@ import {ScrAuthenticationGuard} from "./authentication.guard";
 
 export * from './authentication.const';
 export * from './authentication.guard';
+
 export * from './http-client/secure-http-client.module';
 export * from './login/login.module';
+export * from './store/index';
 
 @NgModule({
   imports: [
