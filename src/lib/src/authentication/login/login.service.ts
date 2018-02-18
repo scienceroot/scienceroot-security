@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import "rxjs/add/operator/map";
+import {ScrAuthenticationTokenStore} from "../store/token.store";
 
 const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
 const SCR_LOGIN_PATH: string = SCR_USER_BASE_PATH + '/login';
@@ -22,11 +23,21 @@ export class ScrAuthenticationLoginService {
   }
 
   public login(username: string, password: string): Promise<any> {
-    return this.httpClient.post(SCR_LOGIN_PATH, {username: username, password: password})
+    return this.httpClient.post(
+        SCR_LOGIN_PATH,
+        {username: username, password: password},
+      {observe: 'response'}
+      )
       .toPromise()
-      .then(res => {
-        this.setLoginStatus(true);
-        return res;
+      .then((res: HttpResponse<any>) => {
+        let token: string = res.headers.get('Authorization');
+
+        if(!!token) {
+          this.setLoginStatus(true);
+          ScrAuthenticationTokenStore.setToken(token)
+        }
+
+        return res.body;
       }).catch((error: any) => {
         this.setLoginStatus(false);
         console.error(error);

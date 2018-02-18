@@ -3,7 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
-import {ScrAuthenticationLoginComponent, ScrAuthenticationModule} from "security";
+import {ScrAuthenticationLoginComponent, ScrAuthenticationModule, ScrAuthenticationTokenStoreConfig} from "security";
 import {ScrRestrictedDemoModule} from "./restricted/restricted.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
@@ -28,6 +28,7 @@ export class AppModule {
 
 
   constructor() {
+    new ScrAuthenticationTokenStoreConfig('scrAuthToken').save();
   }
 
 
