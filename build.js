@@ -12,7 +12,7 @@ const sourcemaps = require('rollup-plugin-sourcemaps');
 const inlineResources = require('./inline-resources');
 
 
-const libName = '';
+const libName = 'security';
 const rootFolder = path.join(__dirname);
 const compilationFolder = path.join(rootFolder, 'out-tsc');
 const srcFolder = path.join(rootFolder, 'src/lib');
