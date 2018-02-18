@@ -7,7 +7,7 @@ export class ScrAuthenticationTokenStoreConfig {
   };
 
   static fetch(): ScrAuthenticationTokenStoreConfig {
-    let token = sessionStorage.getItem(ScrAuthenticationTokenStoreConfig.storageKeys.basePath) || '';
+    let token = sessionStorage.getItem(ScrAuthenticationTokenStoreConfig.storageKeys.token) || '';
 
     return new ScrAuthenticationTokenStoreConfig(token);
   }
