@@ -4,8 +4,8 @@ import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
 import "rxjs/add/operator/map";
 import {ScrAuthenticationTokenStore} from "../store/token.store";
 
-const SCR_USER_BASE_PATH: string = 'http://localhost:8080';
-//const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
+//const SCR_USER_BASE_PATH: string = 'http://localhost:8080';
+const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
 const SCR_LOGIN_PATH: string = SCR_USER_BASE_PATH + '/login';
 const SCR_TOKEN_PATH: string = SCR_USER_BASE_PATH + '/token';
 
