@@ -1,12 +1,13 @@
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
-import {HttpClient, HttpResponse} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
 import "rxjs/add/operator/map";
 import {ScrAuthenticationTokenStore} from "../store/token.store";
 
 const SCR_USER_BASE_PATH: string = 'http://localhost:8080';
 //const SCR_USER_BASE_PATH: string = 'https://api.scienceroots.com/users';
 const SCR_LOGIN_PATH: string = SCR_USER_BASE_PATH + '/login';
+const SCR_TOKEN_PATH: string = SCR_USER_BASE_PATH + '/token';
 
 @Injectable()
 export class ScrAuthenticationLoginService {
@@ -39,8 +40,7 @@ export class ScrAuthenticationLoginService {
         let token: string = res.headers.get('Authorization');
 
         if(!!token) {
-          this.setLoginStatus(true);
-          ScrAuthenticationTokenStore.setToken(token)
+          this.onLoginSuccess(token);
         }
 
         return res.body;
@@ -52,8 +52,40 @@ export class ScrAuthenticationLoginService {
       });
   }
 
+  public renewToken(): Promise<any> {
+    let url = SCR_TOKEN_PATH;
+    let token = ScrAuthenticationTokenStore.getToken();
+    let headers = new HttpHeaders();
+
+    headers = headers.set('Authorization', token);
+
+    return this.httpClient.get(
+      url,
+      {
+        observe: 'response',
+        headers: headers
+      })
+      .toPromise()
+      .then((res: HttpResponse<any>) => {
+        let token: string = res.headers.get('Authorization');
+
+        if(!!token) {
+          this.onLoginSuccess(token);
+
+          return Promise.resolve(true);
+        } else {
+          return Promise.resolve(false);
+        }
+      });
+  }
+
   public authenticated(): boolean {
     return this.isAuthenticated;
+  }
+
+  private onLoginSuccess(token: string) {
+    this.setLoginStatus(true);
+    ScrAuthenticationTokenStore.setToken(token)
   }
 
   private setLoginStatus(status: boolean) {

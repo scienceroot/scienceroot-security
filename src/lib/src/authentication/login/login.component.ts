@@ -76,21 +76,24 @@ export class ScrAuthenticationLoginComponent {
   ) {
     let token = ScrAuthenticationTokenStore.getToken();
     if(!!token) {
-
+      this.loginService.renewToken()
+        .then(() => this.redirectOnLogin());
     }
   }
 
   public submit() {
     if(!!this.username && !!this.password) {
       this.loginService.login(this.username, this.password)
-        .then(() => {
-          if(!!this.loginService.redirectUrl) {
-            this.router.navigateByUrl(this.loginService.redirectUrl);
-          } else {
-            this.router.navigate(['/'])
-          }
-        })
+        .then(() => this.redirectOnLogin())
         .catch(error => this.setErrors(error));
+    }
+  }
+
+  private redirectOnLogin() {
+    if(!!this.loginService.redirectUrl) {
+      this.router.navigateByUrl(this.loginService.redirectUrl);
+    } else {
+      this.router.navigate(['/'])
     }
   }
 
