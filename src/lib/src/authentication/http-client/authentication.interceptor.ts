@@ -12,11 +12,17 @@ export class ScrAuthenticationInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let reqClone = req.clone();
+    let reqClone: HttpRequest<any>;
     let token: string = ScrAuthenticationTokenStore.getToken();
 
     if(!!token) {
-      reqClone.headers.set('Authorization', token);
+      reqClone = req.clone({
+        setHeaders: {
+          'Authorization': token
+        }
+      });
+    } else {
+      reqClone = req.clone();
     }
 
     return next.handle(reqClone);
