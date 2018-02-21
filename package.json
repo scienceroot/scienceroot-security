@@ -1,6 +1,6 @@
 {
   "name": "@scienceroot/security",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "./security.umd.js",
   "module": "./security.es5.js",
