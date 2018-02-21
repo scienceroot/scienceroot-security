@@ -16,7 +16,7 @@ export class ScrAuthenticationInterceptor implements HttpInterceptor {
     let token: string = ScrAuthenticationTokenStore.getToken();
 
     if(!!token) {
-      reqClone.headers.set(SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY, token);
+      reqClone.headers.set('Authorization', token);
     }
 
     return next.handle(reqClone);
