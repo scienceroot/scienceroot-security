@@ -27,6 +27,10 @@ export class ScrAuthenticationLoginService {
   private isAuthenticated: boolean = false;
 
   constructor(private httpClient: HttpClient) {
+    let token = ScrAuthenticationTokenStore.getToken();
+    if(!!token) {
+      this.isAuthenticated = true;
+    }
   }
 
   public login(username: string, password: string): Promise<any> {
