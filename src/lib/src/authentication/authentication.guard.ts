@@ -21,6 +21,8 @@ export class ScrAuthenticationGuard implements CanActivate {
     if(authenticated) {
       return true;
     } else {
+      this.loginService.redirectUrl = state.url;
+
       this.router.navigate(['/login']);
       return false;
     }

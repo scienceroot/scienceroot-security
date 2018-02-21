@@ -2,6 +2,7 @@ import {Component} from "@angular/core";
 import {ScrAuthenticationLoginService} from "./login.service";
 import {Router} from "@angular/router";
 import {__core_private_testing_placeholder__} from "@angular/core/testing";
+import {ScrAuthenticationTokenStore} from "../store/token.store";
 
 @Component({
   selector: '',
@@ -73,12 +74,22 @@ export class ScrAuthenticationLoginComponent {
     private loginService: ScrAuthenticationLoginService,
     private router: Router
   ) {
+    let token = ScrAuthenticationTokenStore.getToken();
+    if(!!token) {
+
+    }
   }
 
   public submit() {
     if(!!this.username && !!this.password) {
       this.loginService.login(this.username, this.password)
-        .then(() => this.router.navigate(['/']))
+        .then(() => {
+          if(!!this.loginService.redirectUrl) {
+            this.router.navigateByUrl(this.loginService.redirectUrl);
+          } else {
+            this.router.navigate(['/'])
+          }
+        })
         .catch(error => this.setErrors(error));
     }
   }
