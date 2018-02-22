@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 import {ScrAuthenticationLoginService} from "./login.service";
 import {Router} from "@angular/router";
 import {__core_private_testing_placeholder__} from "@angular/core/testing";
-import {ScrAuthenticationTokenStore} from "../store/token.store";
+import {ScrAuthenticationStore} from "../store/authentication.store";
 
 @Component({
   selector: '',
@@ -74,7 +74,7 @@ export class ScrAuthenticationLoginComponent {
     private loginService: ScrAuthenticationLoginService,
     private router: Router
   ) {
-    let token = ScrAuthenticationTokenStore.getToken();
+    let token = ScrAuthenticationStore.getToken();
     if(!!token) {
       this.loginService.renewToken()
         .then(() => this.redirectOnLogin());

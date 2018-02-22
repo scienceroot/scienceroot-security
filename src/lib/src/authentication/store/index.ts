@@ -1,2 +1,2 @@
-export * from './token-store-config.model';
-export * from './token.store';
+export * from './authentication-store-config.model';
+export * from './authentication.store';

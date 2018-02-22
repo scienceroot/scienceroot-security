@@ -1,7 +1,7 @@
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
-import {ScrAuthenticationTokenStore} from "../store/token.store";
+import {ScrAuthenticationStore} from "../store/authentication.store";
 import {SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY} from "../authentication.const";
 import {Router} from "@angular/router";
 
@@ -14,7 +14,7 @@ export class ScrAuthenticationInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let reqClone: HttpRequest<any>;
-    let token: string = ScrAuthenticationTokenStore.getToken();
+    let token: string = ScrAuthenticationStore.getToken();
 
     if(!!token) {
       reqClone = req.clone({
