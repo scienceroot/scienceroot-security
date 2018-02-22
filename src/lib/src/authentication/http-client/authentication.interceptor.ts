@@ -1,13 +1,14 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
+import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {ScrAuthenticationTokenStore} from "../store/token.store";
 import {SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY} from "../authentication.const";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class ScrAuthenticationInterceptor implements HttpInterceptor {
 
-  constructor() {
+  constructor(private router: Router) {
 
   }
 
@@ -25,6 +26,14 @@ export class ScrAuthenticationInterceptor implements HttpInterceptor {
       reqClone = req.clone();
     }
 
-    return next.handle(reqClone);
+    return next.handle(reqClone).do(
+      (event: HttpEvent<any>) => {},
+      (err: any) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            this.router.navigate(['/login']);
+          }
+        }
+      });
   }
 }
