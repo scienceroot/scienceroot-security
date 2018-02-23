@@ -38,6 +38,8 @@ export class AppModule {
       'https://api.scienceroots.com/token',
     ).save();
 
+
+    this.loginService.loginStateChanged.subscribe(state => console.log(state));
   }
 
 

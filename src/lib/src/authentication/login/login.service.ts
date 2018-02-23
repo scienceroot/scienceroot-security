@@ -24,7 +24,6 @@ export class ScrAuthenticationLoginService {
   constructor(private httpClient: HttpClient) {
     let token = ScrAuthenticationStore.getToken();
     if(!!token) {
-      this.isAuthenticated = true;
       this.renewToken();
     }
   }

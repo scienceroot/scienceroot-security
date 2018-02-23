@@ -13,7 +13,7 @@ import {HttpClient} from "@angular/common/http";
 export class ScrRestrictedDemoComponent {
 
 
-  constructor(private httpClient: HttpClient) {
-    this.httpClient.get('https://api.scienceroots.com/token').toPromise();
+  constructor() {
+
   }
 }
