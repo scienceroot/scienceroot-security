@@ -25,6 +25,7 @@ export class ScrAuthenticationLoginService {
     let token = ScrAuthenticationStore.getToken();
     if(!!token) {
       this.isAuthenticated = true;
+      this.renewToken();
     }
   }
 
@@ -84,7 +85,7 @@ export class ScrAuthenticationLoginService {
 
   private onLoginSuccess(token: string) {
     this.setLoginStatus(true);
-    ScrAuthenticationStore.setToken(token)
+    ScrAuthenticationStore.setToken(token);
   }
 
   private setLoginStatus(status: boolean) {
