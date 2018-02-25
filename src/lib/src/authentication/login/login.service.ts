@@ -28,10 +28,10 @@ export class ScrAuthenticationLoginService {
     }
   }
 
-  public login(username: string, password: string): Promise<any> {
+  public login(mail: string, password: string): Promise<any> {
     return this.httpClient.post(
         ScrAuthenticationStore.loginResource(),
-        {username: username, password: password},
+      {mail: mail, password: password},
       {observe: 'response'}
       )
       .toPromise()

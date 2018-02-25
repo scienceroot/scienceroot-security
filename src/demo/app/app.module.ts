@@ -4,7 +4,9 @@ import {RouterModule} from '@angular/router';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {
-  ScrAuthenticationLoginComponent, ScrAuthenticationLoginService, ScrAuthenticationModule,
+  ScrAuthenticationLoginComponent,
+  ScrAuthenticationLoginService,
+  ScrAuthenticationModule,
   ScrAuthenticationStoreConfig
 } from "security";
 import {ScrRestrictedDemoModule} from "./restricted/restricted.module";
@@ -29,13 +31,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 })
 export class AppModule {
 
+  //private host: string = 'https://api.scienceroots.com';
+  private host: string = 'http://localhost:8080';
 
   constructor(private loginService: ScrAuthenticationLoginService) {
     new ScrAuthenticationStoreConfig(
       'scrAuthToken',
-      'https://api.scienceroots.com/register',
-      'https://api.scienceroots.com/login',
-      'https://api.scienceroots.com/token',
+      this.host + '/register',
+      this.host + '/login',
+      this.host + '/token',
     ).save();
 
 

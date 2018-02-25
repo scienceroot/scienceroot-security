@@ -1,36 +1,38 @@
 import {Component} from "@angular/core";
 import {ScrAuthenticationLoginService} from "./login.service";
 import {Router} from "@angular/router";
-import {__core_private_testing_placeholder__} from "@angular/core/testing";
 import {ScrAuthenticationStore} from "../store/authentication.store";
 
 @Component({
   selector: '',
   template: `
-    <div>
-      <div class="errors">
+    <div fxLayout="column">
+
+      <div fxFlex=""
+           class="errors">
         <div  class="error"
               *ngIf="passwordIncorrectError">
-          Incorrect password for username.
+          <p>Incorrect password for mail.</p>
         </div>
         <div  class="error"
               *ngIf="userNotExistError">
-          Username not found.
+          <p>Username not found.</p>
         </div>
         <div  class="error"
               *ngIf="defaultError">
-          We're sorry! Something went wrong, please try again later.
+          <p>We're sorry! Something went wrong, please try again later.</p>
         </div>
       </div>
-      <div>
+
+      <div fxFlex="">
         <mat-form-field>
-          <input  matInput=""
-                  [(ngModel)]="username"
-                  placeholder="Username"
-                  required />
+          <input matInput=""
+                 [(ngModel)]="mail"
+                 placeholder="Mail"
+                 required />
         </mat-form-field>
       </div>
-      <div>
+      <div fxFlex="">
         <mat-form-field>
           <input  matInput=""
                   [(ngModel)]="password"
@@ -39,14 +41,10 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
                   required />
         </mat-form-field>
       </div>
-      <div>
-        <div>
-          <a  mat-button=""
-              [routerLink]="['/user', 'new']">
-            Create new account
-          </a>
-        </div>
-        <div>
+      <div fxFlex=""
+           fxLayout="row">
+
+        <div fxFlex="150px">
           <button mat-raised-button=""
                   (click)="submit()"
                   color="accent"
@@ -54,16 +52,30 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
             Login
           </button>
         </div>
+        <div fxFlex="150px">
+          <a mat-button=""
+             [routerLink]="['/user', 'new']">
+            Create new account
+          </a>
+        </div>
+
       </div>
     </div>  
   `,
   styles: [`
+    :host /deep/ mat-form-field {
+      width: 100%;
+    }
+
+    .error {
+      color: red;
+    }
   
   `]
 })
 export class ScrAuthenticationLoginComponent {
 
-  public username: string;
+  public mail: string;
   public password: string;
 
   public passwordIncorrectError: boolean = false;
@@ -82,8 +94,8 @@ export class ScrAuthenticationLoginComponent {
   }
 
   public submit() {
-    if(!!this.username && !!this.password) {
-      this.loginService.login(this.username, this.password)
+    if (!!this.mail && !!this.password) {
+      this.loginService.login(this.mail, this.password)
         .then(() => this.redirectOnLogin())
         .catch(error => this.setErrors(error));
     }
