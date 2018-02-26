@@ -1,10 +1,9 @@
 import {Component} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: '',
   template: `
-  
+    <p>Inside the restricted area</p>
   `,
   styles: [`
   

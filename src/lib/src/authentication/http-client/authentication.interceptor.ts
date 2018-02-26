@@ -2,7 +2,6 @@ import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest}
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {ScrAuthenticationStore} from "../store/authentication.store";
-import {SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY} from "../authentication.const";
 import {Router} from "@angular/router";
 
 @Injectable()

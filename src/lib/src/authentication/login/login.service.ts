@@ -28,7 +28,7 @@ export class ScrAuthenticationLoginService {
     }
   }
 
-  public login(mail: string, password: string): Promise<any> {
+  public login(mail: string, password: string): Promise<string> {
     return this.httpClient.post(
         ScrAuthenticationStore.loginResource(),
       {mail: mail, password: password},
@@ -51,7 +51,7 @@ export class ScrAuthenticationLoginService {
       });
   }
 
-  public renewToken(): Promise<any> {
+  public renewToken(): Promise<boolean> {
     let url = ScrAuthenticationStore.tokenResource();
     let token = ScrAuthenticationStore.getToken();
     let headers = new HttpHeaders();

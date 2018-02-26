@@ -6,7 +6,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
 @Component({
   selector: '',
   template: `
-    <div fxLayout="column">
+    <form fxLayout="column">
 
       <div fxFlex=""
            class="errors">
@@ -29,6 +29,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
           <input matInput=""
                  [(ngModel)]="mail"
                  placeholder="Mail"
+                 name="mail"
                  required />
         </mat-form-field>
       </div>
@@ -38,6 +39,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
                   [(ngModel)]="password"
                   type="password"
                   placeholder="Password"
+                  name="password"
                   required />
         </mat-form-field>
       </div>
@@ -48,7 +50,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
           <button mat-raised-button=""
                   (click)="submit()"
                   color="accent"
-                  type="button">
+                  type="submit">
             Login
           </button>
         </div>
@@ -60,7 +62,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
         </div>
 
       </div>
-    </div>  
+    </form>  
   `,
   styles: [`
     :host /deep/ mat-form-field {
