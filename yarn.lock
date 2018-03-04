@@ -3,41 +3,41 @@
 
 
 "@angular/animations@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fanimations/-/animations-5.2.5.tgz#3e72184321c4979305619c74902b8be92d76db70"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fanimations/-/animations-5.2.7.tgz#a99fe128f3809e3f8082441a6e676992b9352db7"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/cdk@5.x.x":
-  version "5.2.2"
-  resolved "https://npm.scienceroots.com/@angular%2fcdk/-/cdk-5.2.2.tgz#5a53929e3a4ce4d0166d6319611d2035454bb778"
+  version "5.2.3"
+  resolved "https://npm.scienceroots.com/@angular%2fcdk/-/cdk-5.2.3.tgz#b52e7040e1e6577b593b5d974b80020c1f5babe3"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/common@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fcommon/-/common-5.2.5.tgz#08dd636fa46077d047066b13a1aae494066f6c55"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fcommon/-/common-5.2.7.tgz#11bb9f00afe91af8d772ecdff83c2e179f9a67a0"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/compiler-cli@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fcompiler-cli/-/compiler-cli-5.2.5.tgz#b1988bb2c0a956e7fc163acf8c7d794a07a88d08"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fcompiler-cli/-/compiler-cli-5.2.7.tgz#3bad9d5e4c25ebc51e1bb67b71b26a97d6d3bbc5"
   dependencies:
     chokidar "^1.4.2"
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
-    tsickle "^0.26.0"
+    tsickle "^0.27.2"
 
 "@angular/compiler@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fcompiler/-/compiler-5.2.5.tgz#5e3b511906048a579fcd007aba72911472e5aa28"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fcompiler/-/compiler-5.2.7.tgz#31dcc7ac18cc23cb115e76c541b982737ff93ec9"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/core@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fcore/-/core-5.2.5.tgz#24f9cd75c5b2728f2ddd1869777590ea7177bca9"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fcore/-/core-5.2.7.tgz#e5607fc39d90f9fe4fbaaeeeb6cdb9371966bfe3"
   dependencies:
     tslib "^1.7.1"
 
@@ -48,38 +48,38 @@
     tslib "^1.7.1"
 
 "@angular/forms@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fforms/-/forms-5.2.5.tgz#2ad7a420c6ef6cd87a34071c5319ec83f7ed56aa"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fforms/-/forms-5.2.7.tgz#a0c41fdb6b8ba2c32653cc3058d5fa47db91fbf8"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/http@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fhttp/-/http-5.2.5.tgz#1208256e36f0e486d96d10a733fdc8424ffa16bf"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fhttp/-/http-5.2.7.tgz#a163f6958f12d2665419123861b0d613c1c82afb"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/material@5.x.x":
-  version "5.2.2"
-  resolved "https://npm.scienceroots.com/@angular%2fmaterial/-/material-5.2.2.tgz#13822736b7aa034ed0566a6962ee574d299208ee"
+  version "5.2.3"
+  resolved "https://npm.scienceroots.com/@angular%2fmaterial/-/material-5.2.3.tgz#ce7e2abb79c0bd16dff7f247b21c5339d02dd949"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser-dynamic@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-5.2.5.tgz#b89df410bd953e2a6843325f9ac3c09a10eadaf0"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-5.2.7.tgz#91f903c1f73de2fba1004bc31ed1c3117c7f0406"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/platform-browser@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser/-/platform-browser-5.2.5.tgz#eae4af2b742fb901d84d6367cd99f9e88102151f"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2fplatform-browser/-/platform-browser-5.2.7.tgz#cfd86040c25380aabf0322ef47aecc61f23cc532"
   dependencies:
     tslib "^1.7.1"
 
 "@angular/router@5.x.x":
-  version "5.2.5"
-  resolved "https://npm.scienceroots.com/@angular%2frouter/-/router-5.2.5.tgz#f8f220d5fb85fc10d60fe606b0f2a64732265142"
+  version "5.2.7"
+  resolved "https://npm.scienceroots.com/@angular%2frouter/-/router-5.2.7.tgz#691c375fe32f01bea56d169469ad8f254b136af9"
   dependencies:
     tslib "^1.7.1"
 
@@ -92,10 +92,10 @@ abbrev@1:
   resolved "https://npm.scienceroots.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
 
 accepts@~1.3.3, accepts@~1.3.4:
-  version "1.3.4"
-  resolved "https://npm.scienceroots.com/accepts/-/accepts-1.3.4.tgz#86246758c7dd6d21a6474ff084a4740ec05eb21f"
+  version "1.3.5"
+  resolved "https://npm.scienceroots.com/accepts/-/accepts-1.3.5.tgz#eb777df6011723a3b14e8a72c0805c8e86746bd2"
   dependencies:
-    mime-types "~2.1.16"
+    mime-types "~2.1.18"
     negotiator "0.6.1"
 
 after@0.8.2:
@@ -1170,7 +1170,7 @@ mime-db@~1.33.0:
   version "1.33.0"
   resolved "https://npm.scienceroots.com/mime-db/-/mime-db-1.33.0.tgz#a3492050a5cb9b63450541e39d9788d2272783db"
 
-mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.16, mime-types@~2.1.7:
+mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.18, mime-types@~2.1.7:
   version "2.1.18"
   resolved "https://npm.scienceroots.com/mime-types/-/mime-types-2.1.18.tgz#6f323f60a83d11146f831ff11fd66e2fe5503bb8"
   dependencies:
@@ -1208,8 +1208,8 @@ minimist@1.2.0, minimist@^1.2.0:
     minimist "0.0.8"
 
 moment@*:
-  version "2.20.1"
-  resolved "https://npm.scienceroots.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+  version "2.21.0"
+  resolved "https://npm.scienceroots.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
 
 ms@0.7.1:
   version "0.7.1"
@@ -1228,8 +1228,8 @@ ms@2.0.0:
   resolved "https://npm.scienceroots.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 nan@^2.3.0:
-  version "2.8.0"
-  resolved "https://npm.scienceroots.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
+  version "2.9.2"
+  resolved "https://npm.scienceroots.com/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
 
 negotiator@0.6.1:
   version "0.6.1"
@@ -1490,8 +1490,8 @@ read-pkg@^1.0.0:
     path-type "^1.0.0"
 
 readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.4:
-  version "2.3.4"
-  resolved "https://npm.scienceroots.com/readable-stream/-/readable-stream-2.3.4.tgz#c946c3f47fa7d8eabc0b6150f4a12f69a4574071"
+  version "2.3.5"
+  resolved "https://npm.scienceroots.com/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.3"
@@ -1738,11 +1738,11 @@ socket.io-client@2.0.4:
     to-array "0.1.4"
 
 socket.io-parser@~3.1.1:
-  version "3.1.2"
-  resolved "https://npm.scienceroots.com/socket.io-parser/-/socket.io-parser-3.1.2.tgz#dbc2282151fc4faebbe40aeedc0772eba619f7f2"
+  version "3.1.3"
+  resolved "https://npm.scienceroots.com/socket.io-parser/-/socket.io-parser-3.1.3.tgz#ed2da5ee79f10955036e3da413bfd7f1e4d86c8e"
   dependencies:
     component-emitter "1.2.1"
-    debug "~2.6.4"
+    debug "~3.1.0"
     has-binary2 "~1.0.2"
     isarray "2.0.1"
 
@@ -1766,21 +1766,17 @@ source-map-resolve@^0.5.0:
     source-map-url "^0.4.0"
     urix "^0.1.0"
 
-source-map-support@^0.4.2:
-  version "0.4.18"
-  resolved "https://npm.scienceroots.com/source-map-support/-/source-map-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
+source-map-support@^0.5.0:
+  version "0.5.3"
+  resolved "https://npm.scienceroots.com/source-map-support/-/source-map-support-0.5.3.tgz#2b3d5fff298cfa4d1afd7d4352d569e9a0158e76"
   dependencies:
-    source-map "^0.5.6"
+    source-map "^0.6.0"
 
 source-map-url@^0.4.0:
   version "0.4.0"
   resolved "https://npm.scienceroots.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
 
-source-map@^0.5.6:
-  version "0.5.7"
-  resolved "https://npm.scienceroots.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
-
-source-map@~0.6.1:
+source-map@^0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://npm.scienceroots.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
 
@@ -1788,19 +1784,27 @@ spawn-command@^0.0.2-1:
   version "0.0.2"
   resolved "https://npm.scienceroots.com/spawn-command/-/spawn-command-0.0.2.tgz#9544e1a43ca045f8531aac1a48cb29bdae62338e"
 
-spdx-correct@~1.0.0:
-  version "1.0.2"
-  resolved "https://npm.scienceroots.com/spdx-correct/-/spdx-correct-1.0.2.tgz#4b3073d933ff51f3912f03ac5519498a4150db40"
+spdx-correct@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.scienceroots.com/spdx-correct/-/spdx-correct-3.0.0.tgz#05a5b4d7153a195bc92c3c425b69f3b2a9524c82"
   dependencies:
-    spdx-license-ids "^1.0.2"
+    spdx-expression-parse "^3.0.0"
+    spdx-license-ids "^3.0.0"
 
-spdx-expression-parse@~1.0.0:
-  version "1.0.4"
-  resolved "https://npm.scienceroots.com/spdx-expression-parse/-/spdx-expression-parse-1.0.4.tgz#9bdf2f20e1f40ed447fbe273266191fced51626c"
+spdx-exceptions@^2.1.0:
+  version "2.1.0"
+  resolved "https://npm.scienceroots.com/spdx-exceptions/-/spdx-exceptions-2.1.0.tgz#2c7ae61056c714a5b9b9b2b2af7d311ef5c78fe9"
 
-spdx-license-ids@^1.0.2:
-  version "1.2.2"
-  resolved "https://npm.scienceroots.com/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
+spdx-expression-parse@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.scienceroots.com/spdx-expression-parse/-/spdx-expression-parse-3.0.0.tgz#99e119b7a5da00e05491c9fa338b7904823b41d0"
+  dependencies:
+    spdx-exceptions "^2.1.0"
+    spdx-license-ids "^3.0.0"
+
+spdx-license-ids@^3.0.0:
+  version "3.0.0"
+  resolved "https://npm.scienceroots.com/spdx-license-ids/-/spdx-license-ids-3.0.0.tgz#7a7cd28470cc6d3a1cfe6d66886f6bc430d3ac87"
 
 sshpk@^1.7.0:
   version "1.13.1"
@@ -1922,8 +1926,8 @@ to-array@0.1.4:
   resolved "https://npm.scienceroots.com/to-array/-/to-array-0.1.4.tgz#17e6c11f73dd4f3d74cda7a4ff3238e9ad9bf890"
 
 tough-cookie@~2.3.0:
-  version "2.3.3"
-  resolved "https://npm.scienceroots.com/tough-cookie/-/tough-cookie-2.3.3.tgz#0b618a5565b6dea90bf3425d04d55edc475a7561"
+  version "2.3.4"
+  resolved "https://npm.scienceroots.com/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
 
@@ -1931,14 +1935,14 @@ tree-kill@^1.1.0:
   version "1.2.0"
   resolved "https://npm.scienceroots.com/tree-kill/-/tree-kill-1.2.0.tgz#5846786237b4239014f05db156b643212d4c6f36"
 
-tsickle@^0.26.0:
-  version "0.26.0"
-  resolved "https://npm.scienceroots.com/tsickle/-/tsickle-0.26.0.tgz#40b30a2dd6abcb33b182e37596674bd1cfe4039c"
+tsickle@^0.27.2:
+  version "0.27.2"
+  resolved "https://npm.scienceroots.com/tsickle/-/tsickle-0.27.2.tgz#f33d46d046f73dd5c155a37922e422816e878736"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
-    source-map "^0.5.6"
-    source-map-support "^0.4.2"
+    source-map "^0.6.0"
+    source-map-support "^0.5.0"
 
 tslib@^1.7.1:
   version "1.9.0"
@@ -2010,11 +2014,11 @@ uws@~9.14.0:
   resolved "https://npm.scienceroots.com/uws/-/uws-9.14.0.tgz#fac8386befc33a7a3705cbd58dc47b430ca4dd95"
 
 validate-npm-package-license@^3.0.1:
-  version "3.0.1"
-  resolved "https://npm.scienceroots.com/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"
+  version "3.0.3"
+  resolved "https://npm.scienceroots.com/validate-npm-package-license/-/validate-npm-package-license-3.0.3.tgz#81643bcbef1bdfecd4623793dc4648948ba98338"
   dependencies:
-    spdx-correct "~1.0.0"
-    spdx-expression-parse "~1.0.0"
+    spdx-correct "^3.0.0"
+    spdx-expression-parse "^3.0.0"
 
 verror@1.10.0:
   version "1.10.0"

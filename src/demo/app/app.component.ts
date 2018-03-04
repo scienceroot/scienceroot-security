@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ScrAuthenticationLoginService, ScrAuthenticationStore, ScrAuthenticationStoreConfig} from "security";
 
 @Component({
   selector: 'demo-app',
@@ -21,5 +22,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(private loginService: ScrAuthenticationLoginService) {
+    let tokenStorageKey = ScrAuthenticationStore.tokenName();
+    this.loginService.loginStateChanged.subscribe(() => {
+      let token = localStorage.getItem(tokenStorageKey);
+      console.log(token);
+    })
+  }
 }
 

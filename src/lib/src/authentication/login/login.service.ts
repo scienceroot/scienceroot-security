@@ -83,8 +83,8 @@ export class ScrAuthenticationLoginService {
   }
 
   private onLoginSuccess(token: string) {
-    this.setLoginStatus(true);
     ScrAuthenticationStore.setToken(token);
+    this.setLoginStatus(true);
   }
 
   private setLoginStatus(status: boolean) {
