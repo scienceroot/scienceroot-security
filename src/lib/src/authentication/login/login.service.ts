@@ -9,8 +9,6 @@ export class ScrAuthenticationLoginService {
 
   /**
    * Subject triggers every time the login state is changing.
-   *
-   * @type {Subject<any>} emits either true or false for login.
    */
   public loginStateChanged: Subject<boolean> = new Subject();
 
@@ -19,7 +17,7 @@ export class ScrAuthenticationLoginService {
    */
   public redirectUrl: string;
 
-  private isAuthenticated: boolean = false;
+  private _isAuthenticated: boolean = false;
 
   constructor(private httpClient: HttpClient) {
     let token = ScrAuthenticationStore.getToken();
@@ -39,12 +37,12 @@ export class ScrAuthenticationLoginService {
         let token: string = res.headers.get('Authorization');
 
         if(!!token) {
-          this.onLoginSuccess(token);
+          this._onLoginSuccess(token);
         }
 
         return res.body;
       }).catch((error: any) => {
-        this.setLoginStatus(false);
+        this._setLoginStatus(false);
         console.error(error);
 
         throw error;
@@ -69,7 +67,7 @@ export class ScrAuthenticationLoginService {
         let token: string = res.headers.get('Authorization');
 
         if(!!token) {
-          this.onLoginSuccess(token);
+          this._onLoginSuccess(token);
 
           return Promise.resolve(true);
         } else {
@@ -79,20 +77,16 @@ export class ScrAuthenticationLoginService {
   }
 
   public authenticated(): boolean {
-    return this.isAuthenticated;
+    return this._isAuthenticated;
   }
 
-  private onLoginSuccess(token: string) {
+  private _onLoginSuccess(token: string) {
     ScrAuthenticationStore.setToken(token);
-    this.setLoginStatus(true);
+    this._setLoginStatus(true);
   }
 
-  private setLoginStatus(status: boolean) {
-    // just propagate if status changes
-    if(status !== this.isAuthenticated) {
-      this.loginStateChanged.next(status);
-    }
-
-    this.isAuthenticated = status;
+  private _setLoginStatus(status: boolean) {
+    this.loginStateChanged.next(status);
+    this._isAuthenticated = status;
   }
 }
