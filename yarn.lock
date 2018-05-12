@@ -41,9 +41,9 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/flex-layout@2.0.0-beta.12":
-  version "2.0.0-beta.12"
-  resolved "https://npm.scienceroots.com/@angular%2fflex-layout/-/flex-layout-2.0.0-beta.12.tgz#80970dc1d60f27fa41537659926f3238f759f343"
+"@angular/flex-layout@5.0.0-beta.14":
+  version "5.0.0-beta.14"
+  resolved "https://npm.scienceroots.com/@angular%2fflex-layout/-/flex-layout-5.0.0-beta.14.tgz#300e1cba2ef1a70f43fe7ea68ea78267cb4241e4"
   dependencies:
     tslib "^1.7.1"
 
@@ -83,9 +83,15 @@
   dependencies:
     tslib "^1.7.1"
 
-"@scienceroot/design@^1.0.0-beta.3":
-  version "1.0.0-beta.3"
-  resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.0-beta.3.tgz#fd2dde34f3f13b114e0f66c4cb58a4fc48fb8bf5"
+"@bindoc/loading@1.x.x":
+  version "1.0.2"
+  resolved "https://npm.scienceroots.com/@bindoc%2floading/-/loading-1.0.2.tgz#65cacf8981f87ff5ded7d7a46b902c6c459dcd2b"
+
+"@scienceroot/design@1.x.x":
+  version "1.0.8"
+  resolved "https://npm.scienceroots.com/@scienceroot%2fdesign/-/design-1.0.8.tgz#525d5387319ff689be22f52a68c160c3fc9581f6"
+  dependencies:
+    "@bindoc/loading" "1.x.x"
 
 abbrev@1:
   version "1.1.1"
