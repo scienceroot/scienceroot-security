@@ -43,24 +43,32 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
                   required />
         </mat-form-field>
       </div>
-      <div fxFlex=""
-           fxLayout="row">
-
-        <div fxFlex="150px">
-          <button mat-raised-button=""
-                  (click)="submit()"
-                  color="accent"
-                  type="submit">
-            Login
-          </button>
+      <div fxFlex="">
+        
+        <div  fxLayout="row"
+              fxLayoutGap="24px">
+          <div fxFlex="75px">
+            <button mat-raised-button=""
+                    (click)="submit()"
+                    color="accent"
+                    type="submit">
+              Login
+            </button>
+          </div>
+          <div fxFlex="115px">
+            <a mat-button=""
+               [routerLink]="['/passwordReset']">
+              Forgot password
+            </a>
+          </div>
+          <div fxFlex="170px">
+            <a mat-button=""
+               [routerLink]="['/user', 'new']">
+              Create new account
+            </a>
+          </div>
         </div>
-        <div fxFlex="150px">
-          <a mat-button=""
-             [routerLink]="['/user', 'new']">
-            Create new account
-          </a>
-        </div>
-
+        
       </div>
     </form>  
   `,

@@ -49,7 +49,9 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'tslib': 'npm:tslib/tslib.js'
+      'tslib': 'npm:tslib/tslib.js',
+      '@bindoc/loading': 'npm:@bindoc/loading/bundles/loading.umd.js',
+      '@scienceroot/design': 'npm:@scienceroot/design/bundles/design.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

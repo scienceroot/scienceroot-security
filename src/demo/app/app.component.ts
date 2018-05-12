@@ -26,7 +26,7 @@ export class AppComponent {
     let tokenStorageKey = ScrAuthenticationStore.tokenName();
     this.loginService.loginStateChanged.subscribe(() => {
       let token = localStorage.getItem(tokenStorageKey);
-      console.log(token);
+      console.info(token);
     })
   }
 }

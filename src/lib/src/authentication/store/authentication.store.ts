@@ -2,20 +2,29 @@ import {ScrAuthenticationStoreConfig} from "./authentication-store-config.model"
 
 export class ScrAuthenticationStore {
 
+  public static base(): string {
+    const config = ScrAuthenticationStoreConfig.fetch();
+    return config.base;
+  }
+
   public static loginResource(): string {
-    return ScrAuthenticationStoreConfig.fetch().login;
+    return `${ScrAuthenticationStore.base()}/login`;
   }
 
   public static tokenResource(): string {
-    return ScrAuthenticationStoreConfig.fetch().tokenRenew;
+    return `${ScrAuthenticationStore.base()}/tokenRenew`;
   }
 
   public static registerResource(): string {
-    return ScrAuthenticationStoreConfig.fetch().register;
+    return `${ScrAuthenticationStore.base()}/register`;
   }
 
   public static tokenName(): string {
-    return ScrAuthenticationStoreConfig.fetch().token;
+    return `${ScrAuthenticationStore.base()}/token`;
+  }
+
+  public static passwordReset(): string {
+    return `${ScrAuthenticationStore.base()}/reset`;
   }
 
   public static setToken(token: string) {
@@ -25,8 +34,6 @@ export class ScrAuthenticationStore {
   }
 
   public static getToken(): string {
-    let token = localStorage.getItem(ScrAuthenticationStore.tokenName());
-
-    return token;
+    return localStorage.getItem(ScrAuthenticationStore.tokenName());
   }
 }

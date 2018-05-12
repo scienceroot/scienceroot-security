@@ -1,41 +1,37 @@
 import {
-  SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY, SCR_DEFAULT_LOGIN_PATH_STORAGE_KEY,
-  SCR_DEFAULT_REGISTER_PATH_STORAGE_KEY, SCR_DEFAULT_TOKEN_RENEW_PATH_STORAGE_KEY
-} from "../authentication.const";
+  SCR_DEFAULT_BASE_STORAGE_KEY,
+  SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY
+} from '../authentication.const';
 
 export class ScrAuthenticationStoreConfig {
 
   public static readonly storageKeys: any = {
+    base: SCR_DEFAULT_BASE_STORAGE_KEY,
     token: SCR_DEFAULT_JWT_TOKEN_STORAGE_KEY,
-    register: SCR_DEFAULT_REGISTER_PATH_STORAGE_KEY,
-    login: SCR_DEFAULT_LOGIN_PATH_STORAGE_KEY,
-    tokenRenew: SCR_DEFAULT_TOKEN_RENEW_PATH_STORAGE_KEY
   };
 
   public static fetch(): ScrAuthenticationStoreConfig {
+    let base = sessionStorage.getItem(ScrAuthenticationStoreConfig.storageKeys.base) || '';
     let token = sessionStorage.getItem(ScrAuthenticationStoreConfig.storageKeys.token) || '';
-    let register = sessionStorage.getItem(ScrAuthenticationStoreConfig.storageKeys.register) || '';
-    let login = sessionStorage.getItem(ScrAuthenticationStoreConfig.storageKeys.login) || '';
-    let tokenRenew = sessionStorage.getItem(ScrAuthenticationStoreConfig.storageKeys.tokenRenew) || '';
 
-    return new ScrAuthenticationStoreConfig(token, register, login, tokenRenew);
+    return new ScrAuthenticationStoreConfig(base, token);
   }
 
   constructor(
-    public token: string,
-    public register: string,
-    public login: string,
-    public tokenRenew: string
+    public base: string,
+    public token: string
   ) {
 
   }
 
   public save() {
-    for(let key in ScrAuthenticationStoreConfig.storageKeys) {
-      sessionStorage.setItem(
-        ScrAuthenticationStoreConfig.storageKeys[key],
-        this[key]
-      );
+    for(const key in ScrAuthenticationStoreConfig.storageKeys) {
+      if (ScrAuthenticationStoreConfig.storageKeys.hasOwnProperty(key)) {
+        sessionStorage.setItem(
+          ScrAuthenticationStoreConfig.storageKeys[key],
+          this[key]
+        );
+      }
     }
   }
 }

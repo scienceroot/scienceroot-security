@@ -19,7 +19,6 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {path: '', pathMatch: 'full', redirectTo: 'restricted'},
-      {path: 'login', component: ScrAuthenticationLoginComponent}
     ]),
     ScrAuthenticationModule,
     ScrRestrictedDemoModule
@@ -31,20 +30,12 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 })
 export class AppModule {
 
-  private host: string = 'https://api.scienceroots.com';
-
-  //private host: string = 'http://localhost:8080';
-
   constructor(private loginService: ScrAuthenticationLoginService) {
-    new ScrAuthenticationStoreConfig(
-      'scrAuthToken',
-      this.host + '/register',
-      this.host + '/login',
-      this.host + '/token',
-    ).save();
+    const host: string = 'https://api.scienceroots.com';
 
+    new ScrAuthenticationStoreConfig(host, 'scrAuthToken',).save();
 
-    this.loginService.loginStateChanged.subscribe(state => console.log(state));
+    this.loginService.loginStateChanged.subscribe(state => console.info(state));
   }
 
 
