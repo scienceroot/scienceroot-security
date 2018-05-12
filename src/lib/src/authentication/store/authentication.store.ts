@@ -12,7 +12,7 @@ export class ScrAuthenticationStore {
   }
 
   public static tokenResource(): string {
-    return `${ScrAuthenticationStore.base()}/tokenRenew`;
+    return `${ScrAuthenticationStore.base()}/token`;
   }
 
   public static registerResource(): string {
@@ -20,7 +20,7 @@ export class ScrAuthenticationStore {
   }
 
   public static tokenName(): string {
-    return `${ScrAuthenticationStore.base()}/token`;
+    return ScrAuthenticationStoreConfig.fetch().token;
   }
 
   public static passwordReset(): string {
