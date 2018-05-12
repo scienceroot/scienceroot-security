@@ -9,16 +9,16 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
     <form fxLayout="column">
 
       <div fxFlex=""
-           class="errors">
-        <div  class="error"
+           class="scr-warn-text">
+        <div  class="mat-body-1"
               *ngIf="passwordIncorrectError">
           <p>Incorrect password for mail.</p>
         </div>
-        <div  class="error"
+        <div  class="mat-body-1"
               *ngIf="userNotExistError">
           <p>Username not found.</p>
         </div>
-        <div  class="error"
+        <div  class="mat-body-1"
               *ngIf="defaultError">
           <p>We're sorry! Something went wrong, please try again later.</p>
         </div>
@@ -68,11 +68,6 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
     :host /deep/ mat-form-field {
       width: 100%;
     }
-
-    .error {
-      color: red;
-    }
-  
   `]
 })
 export class ScrAuthenticationLoginComponent {
