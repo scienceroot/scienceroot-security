@@ -1,7 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Subject} from "rxjs/Subject";
 import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
-import "rxjs/add/operator/map";
 import {ScrAuthenticationStore} from "../store/authentication.store";
 
 @Injectable()
