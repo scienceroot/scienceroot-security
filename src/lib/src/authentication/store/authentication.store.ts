@@ -24,7 +24,7 @@ export class ScrAuthenticationStore {
   }
 
   public static passwordReset(): string {
-    return `${ScrAuthenticationStore.base()}/reset`;
+    return `${ScrAuthenticationStore.base()}/users/reset`;
   }
 
   public static setToken(token: string) {
