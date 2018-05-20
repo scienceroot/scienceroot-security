@@ -25,23 +25,27 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
       </div>
 
       <div fxFlex="">
-        <mat-form-field>
-          <input matInput=""
-                 [(ngModel)]="mail"
-                 placeholder="Mail"
-                 name="mail"
-                 required />
-        </mat-form-field>
+        <div class="form-field-container">
+          <mat-form-field>
+            <input matInput=""
+                   [(ngModel)]="mail"
+                   placeholder="Mail"
+                   name="mail"
+                   required />
+          </mat-form-field>
+        </div>
       </div>
       <div fxFlex="">
-        <mat-form-field>
-          <input  matInput=""
-                  [(ngModel)]="password"
-                  type="password"
-                  placeholder="Password"
-                  name="password"
-                  required />
-        </mat-form-field>
+        <div class="form-field-container">
+          <mat-form-field>
+            <input  matInput=""
+                    [(ngModel)]="password"
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    required />
+          </mat-form-field>
+        </div>
       </div>
       <div fxFlex="">
         
@@ -76,6 +80,10 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
     :host /deep/ mat-form-field {
       width: 100%;
     }
+    
+    :host /deep/ .mat-form-field-wrapper  {
+      padding: 1.5em 0;
+    } 
   `]
 })
 export class ScrAuthenticationLoginComponent {
