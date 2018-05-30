@@ -61,7 +61,7 @@ import {ScrAuthenticationStore} from "../store/authentication.store";
           </div>
           <div fxFlex="115px">
             <a mat-button=""
-               [routerLink]="['/passwordReset']">
+               [routerLink]="['/forgotPassword']">
               Forgot password
             </a>
           </div>

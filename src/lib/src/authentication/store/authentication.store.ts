@@ -27,6 +27,10 @@ export class ScrAuthenticationStore {
     return `${ScrAuthenticationStore.base()}/users/reset`;
   }
 
+  public static passwordSet(): string {
+    return `${ScrAuthenticationStore.base()}/users/setPassword`;
+  }
+
   public static setToken(token: string) {
     if(!!token) {
       localStorage.setItem(ScrAuthenticationStore.tokenName(), token);

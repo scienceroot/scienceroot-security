@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {ScrLoadingModule} from '@scienceroot/design';
 import {ScrPasswordResetComponent} from './reset.component';
 import {ScrPasswordResetService} from './reset.service';
+import {ScrPasswordSetComponent} from './set.component';
 
 @NgModule({
   imports: [
@@ -19,10 +20,12 @@ import {ScrPasswordResetService} from './reset.service';
     ScrLoadingModule
   ],
   declarations: [
-    ScrPasswordResetComponent
+    ScrPasswordResetComponent,
+    ScrPasswordSetComponent
   ],
   exports: [
-    ScrPasswordResetComponent
+    ScrPasswordResetComponent,
+    ScrPasswordSetComponent
   ],
   providers: [
     ScrPasswordResetService

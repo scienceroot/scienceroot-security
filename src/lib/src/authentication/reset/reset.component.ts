@@ -5,7 +5,7 @@ import {ScrPasswordResetService} from './reset.service';
   selector: '',
   template: `
     <div>
-      <scr-loading>
+      <scr-loading [waitFor]="resetReq">
         <div onInit>
           <div  class="scr-warn-text"
                 *ngIf="!!error">

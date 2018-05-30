@@ -5,6 +5,8 @@ import {ScrAuthenticationLoginModule} from "./login/login.module";
 import {ScrAuthenticationGuard} from "./authentication.guard";
 import {ScrPasswordResetComponent} from './reset/reset.component';
 import {ScrPasswordResetModule} from './reset/reset.module';
+import {ScrPasswordResetService} from './reset/reset.service';
+import {ScrPasswordSetComponent} from './reset/set.component';
 
 export * from './authentication.const';
 export * from './authentication.guard';
@@ -15,7 +17,8 @@ export * from './store/index';
 
 const routes: Routes = [
   {path: 'login', component: ScrAuthenticationLoginComponent},
-  {path: 'passwordReset', component: ScrPasswordResetComponent}
+  {path: 'forgotPassword', component: ScrPasswordResetComponent},
+  {path: 'resetPassword', component: ScrPasswordSetComponent}
 ];
 
 @NgModule({
