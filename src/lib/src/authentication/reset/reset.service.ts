@@ -11,7 +11,7 @@ export class ScrPasswordResetService {
   public reset(mail: string): Promise<any> {
     const url: string = ScrAuthenticationStore.passwordReset();
 
-    return this._httpClient.post(url, {mail: mail})
+    return this._httpClient.post(url, mail)
       .toPromise();
   }
 }
