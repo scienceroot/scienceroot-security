@@ -19,7 +19,7 @@ export class ScrPasswordResetService {
     const url: string = ScrAuthenticationStore.passwordSet();
 
     let header = new HttpHeaders();
-    header = header.append('Authorization', token);
+    header = header.append('Authorization', 'Bearer ' + token);
 
     return this._httpClient.post(url, newPassword, {headers: header}).toPromise();
   }
